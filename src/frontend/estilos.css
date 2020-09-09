@@ -8,7 +8,18 @@
 }
 
 body{
-    background:white;
+    background: #dedede;
     display: flex;
-    min-height: 100hv;
+    min-height: 100vh;
+}
+
+form{
+    margin: auto;
+    width: 50%;
+    max-width: 500px;
+    background:#f3f3f3;
+    padding: 30px;
+    border: 1 px solid rgba(0,0,0,0.2);
+
+
 }
