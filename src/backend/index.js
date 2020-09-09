@@ -4,18 +4,19 @@ const morgan = require('morgan');
 
 const app = express();
 
+app.set('port', process.env.PORT || 3000);
 
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(morgan('dev'));
 
 
-app.get('/',(req, res)=>{
-    res.json({
-        status:'ok'
-    });
-});
+app.use(require('./routes/auth'));
 
 
-app.listen(3000 || process.env.PORT, () => {
-    console.log("Server on port 3000");
+
+
+
+app.listen(app.get('port'), () => {
+    console.log("Server on port ",app.get('port'));
 });
