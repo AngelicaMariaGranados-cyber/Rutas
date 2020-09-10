@@ -1,0 +1,27 @@
+{
+  "name": "Rutas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/backend/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelicaMariaGranados-cyber/Rutas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngelicaMariaGranados-cyber/Rutas/issues"
+  },
+  "homepage": "https://github.com/AngelicaMariaGranados-cyber/Rutas#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
