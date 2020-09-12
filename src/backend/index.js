@@ -1,17 +1,20 @@
 const express = require ('express');
+const bodyparser = require('body-parser');
 const morgan = require('morgan');
-
+const rutaapi= require('./routes/auth');
 
 const app = express();
 
+require('./database');
+
 app.set('port', process.env.PORT || 3000);
 
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
+app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.json());
 app.use(morgan('dev'));
 
 
-app.use(require('./routes/auth'));
+app.use('/api',rutaapi);
 
 
 
