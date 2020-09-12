@@ -1,7 +1,14 @@
 const auth = {};
 
+const pool = require('../batabase');
+
 auth.login = (req, res) => {
-    res.send('Hola esto es el login');
+    const {usuario,clave} =req.body;
+
+    
+    
+
+
 }
 
 
