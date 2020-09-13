@@ -1,9 +1,9 @@
 module.exports = (sequelize, type) => {
     return sequelize.define('roles',{
-        Id_role:{
+        Id_Role:{
             type: type.INTEGER,
-            primarykey: true
+            primaryKey: true
         },
         description: type.STRING
     })
-}
+};
