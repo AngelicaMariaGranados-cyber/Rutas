@@ -41,7 +41,7 @@ auth.login = async (req, res) => {
     if (User) {
         const Pass = bcrypt.compareSync(req.body.Password, User.Password);
         if (Pass) {
-            const token = jwt.sign({User},config.secret)
+            const token = jwt.sign({User},config.secret);
             res.json({
                 success: true
             }, {
