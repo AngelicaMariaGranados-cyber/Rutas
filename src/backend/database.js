@@ -1,10 +1,12 @@
 const Sequelize = require('sequelize');
 
+const {config} = require('./config/config');
+
 const usermodel = require('./models/user');
 const rolemodel = require('./models/roles');
 
-const sequelize = new Sequelize('19uI3hT6mD','19uI3hT6mD','ukcY85PqRs',{
-    host: 'remotemysql.com',
+const sequelize = new Sequelize(config.userdb,config.database,config.passdb,{
+    host: config.hostdb,
     dialect: 'mysql'
 });
 
