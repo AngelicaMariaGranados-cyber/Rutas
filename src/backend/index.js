@@ -18,6 +18,13 @@ app.use(bodyparser.json());
 app.use(morgan('dev'));
 
 
+app.get('/', (req, res) => {
+    res.send({
+        message: 'Funcionado utilice las rutas indicadas',
+        status: 203
+    })
+});
+
 app.use('/api',rutaapi);
 app.use('/api',rutas);
 
