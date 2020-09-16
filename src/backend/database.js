@@ -15,7 +15,9 @@ const role = rolemodel(sequelize, Sequelize);
 sequelize.sync({force:false})
 .then(()=>{
     console.log('Tablas sincronizadas')
-})
+}).catch((err)=>{
+    console.log('Error: ',err);
+});
 
 module.exports = {
     user,

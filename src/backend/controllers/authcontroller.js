@@ -1,10 +1,15 @@
-const auth = {};
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+const auth = {};
+const {config} = require('../config/config');
+
 
 
 const {
     user
 } = require('../database');
+
 
 
 auth.register = async (req, res) => {
@@ -31,15 +36,16 @@ auth.login = async (req, res) => {
         where: {
             Username: req.body.Username
         }
-    })
+    });
 
     if (User) {
         const Pass = bcrypt.compareSync(req.body.Password, User.Password);
         if (Pass) {
+            const token = jwt.sign({User},config.secret)
             res.json({
                 success: true
             }, {
-                token: 'token'
+                token
             });
         } else {
             res.json({
