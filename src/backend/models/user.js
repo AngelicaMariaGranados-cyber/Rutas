@@ -7,7 +7,13 @@ module.exports = (sequelize, type) => {
         },
         Username: type.STRING,
         Password: type.STRING,
-        Role_Id:type.INTEGER,
+        Role_Id:{
+           type: type.INTEGER,
+           references: {
+               model:'roles',
+               key: 'Id_Role'    
+           }
+        }
             
     })
 }
