@@ -5,6 +5,7 @@ const morgan = require('morgan');
 
 const rutaapi= require('./routes/auth');
 const rutas = require('./routes/rutas');
+const {validaToken} = require('./middlewares/Authtoken');
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api',rutaapi);
-app.use('/api',rutas);
+app.use('/api',validaToken,rutas);
 
 
 

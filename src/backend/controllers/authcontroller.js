@@ -12,10 +12,10 @@ const {
 
 
 
-auth.register = async (req, res) => {
-    jwt.verify(req.token, config.secret, (err, data) => {
+auth.register =  (req, res) => {
+    jwt.verify(req.token, config.secret, async (err, data) => {
         if(err){
-            res.sendStatus(403)
+            res.sendStatus(403);
         }else {
             const User = await user.findOne({
                 where: {
@@ -51,10 +51,9 @@ auth.login = async (req, res) => {
         if (Pass) {
             const token = jwt.sign({User},config.secret);
             res.json({
-                success: true
-            }, {
+                success: true,
                 token
-            });
+            },);
         } else {
             res.json({
                 error: 'Error en usuario y/o contraseña'

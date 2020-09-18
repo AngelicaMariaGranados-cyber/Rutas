@@ -1,4 +1,7 @@
-function validaToken (req, res, next){
+
+const token = {}
+
+token.validaToken = function (req, res, next){
     const header = req.headers['authorization'];
     console.log(header);
     if (typeof header != 'undefined'){
@@ -12,6 +15,4 @@ function validaToken (req, res, next){
 }
 
 
-module.exports = {
-    validaToken
-}
+module.exports = token;
