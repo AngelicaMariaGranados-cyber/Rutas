@@ -17,16 +17,5 @@ ruta.getrutas= (req, res) => {
 	});
 };
 
-/* jwt.verify(req.token, config.secret,(err, data) =>{
-    if(err){
-        res.json({
-            message: err,
-        })
-    }else{
-        res.json({
-            message: 'Hola se tiene acceso',
-            data
-        });
-    }
-} ) */
+
 module.exports=ruta;
