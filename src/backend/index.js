@@ -2,11 +2,8 @@ const express = require ('express');
 const bodyparser = require('body-parser');
 const morgan = require('morgan');
 
+const rutas = require('./routes/indexroute');
 
-const rutaapi= require('./routes/auth');
-const rutas = require('./routes/rutas');
-const userrutas = require('./routes/user');
-const {validaToken} = require('./middlewares/Authtoken');
 
 const app = express();
 
@@ -27,9 +24,8 @@ app.get('/', (req, res) => {
     })
 });
 
-app.use('/api',rutaapi);
-app.use('/api',validaToken,rutas);
-app.use('/api',validaToken,userrutas);
+app.use('/api',rutas);
+
 
 
 
