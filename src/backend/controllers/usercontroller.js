@@ -31,7 +31,7 @@ usuario.register = (req, res) => {
                     }
                 });
                 if (!id) {
-                    req.body.Password = bcrypt.hashSync(req.body.Password, 10);
+                    req.body.Password = bcrypt.hashSync(req.body.Password, config.hash);
                     await user.create(req.body);
                     res.json({
                         message: 'User Created',
